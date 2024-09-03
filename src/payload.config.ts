@@ -21,18 +21,14 @@ import path from 'path'
 import { buildConfig } from 'payload'
 import { fileURLToPath } from 'url'
 
-import Categories from './collections/Categories'
 import { Media } from './collections/Media'
 import { Pages } from './collections/Pages'
-import { Posts } from './collections/Posts'
 import Users from './collections/Users'
-import { seedHandler } from './endpoints/seedHandler'
 import { Footer } from './Footer/config'
 import { Header } from './Header/config'
 import { revalidateRedirects } from './hooks/revalidateRedirects'
 import { GenerateTitle, GenerateURL } from '@payloadcms/plugin-seo/types'
-import { Page, Post } from 'src/payload-types'
-import { CompanyInfo } from './CompanyInfo/config'
+import { Page } from 'src/payload-types'
 import { Avatars } from './collections/Avatars'
 import { Landcapes } from './collections/Landscapes'
 import { Cards } from './collections/Cards'
@@ -41,11 +37,11 @@ import { Portraits } from './collections/Portraits'
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
-const generateTitle: GenerateTitle<Post | Page> = ({ doc }) => {
+const generateTitle: GenerateTitle<Page> = ({ doc }) => {
   return doc?.title ? `${doc.title} | Payload Website Template` : 'Payload Website Template'
 }
 
-const generateURL: GenerateURL<Post | Page> = ({ doc }) => {
+const generateURL: GenerateURL<Page> = ({ doc }) => {
   return doc?.slug
     ? `${process.env.NEXT_PUBLIC_SERVER_URL!}/${doc.slug}`
     : process.env.NEXT_PUBLIC_SERVER_URL!
@@ -96,7 +92,7 @@ export default buildConfig({
         BoldFeature(),
         ItalicFeature(),
         LinkFeature({
-          enabledCollections: ['pages', 'posts'],
+          enabledCollections: ['pages'],
           fields: ({ defaultFields }) => {
             const defaultFieldsWithoutUrl = defaultFields.filter((field) => {
               if ('name' in field && field.name === 'url') return false
@@ -123,22 +119,22 @@ export default buildConfig({
   db: mongooseAdapter({
     url: process.env.DATABASE_URI || '',
   }),
-  collections: [Pages, Posts, Media, Avatars, Cards, Landcapes, Portraits, Categories, Users],
+  collections: [Pages, Media, Avatars, Cards, Landcapes, Portraits, Users],
   cors: [process.env.PAYLOAD_PUBLIC_SERVER_URL || ''].filter(Boolean),
   csrf: [process.env.PAYLOAD_PUBLIC_SERVER_URL || ''].filter(Boolean),
   endpoints: [
     // The seed endpoint is used to populate the database with some example data
     // You should delete this endpoint before deploying your site to production
-    {
-      handler: seedHandler,
-      method: 'get',
-      path: '/seed',
-    },
+    // {
+    //   handler: seedHandler,
+    //   method: 'get',
+    //   path: '/seed',
+    // },
   ],
-  globals: [Header, Footer, CompanyInfo],
+  globals: [Header, Footer],
   plugins: [
     redirectsPlugin({
-      collections: ['pages', 'posts'],
+      collections: ['pages'],
       overrides: {
         // @ts-expect-error
         fields: ({ defaultFields }) => {
@@ -160,7 +156,7 @@ export default buildConfig({
       },
     }),
     nestedDocsPlugin({
-      collections: ['categories'],
+      collections: [],
     }),
     seoPlugin({
       generateTitle,

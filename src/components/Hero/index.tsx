@@ -1,24 +1,10 @@
 import Image from 'next/image'
-import { buttonVariants } from '@/components/ui/button'
-import { Icons } from '@/components/Icons'
-import Link from 'next/link'
-import { cn } from '@/utilities/cn'
-import payloadConfig from '@payload-config'
 import type { Hero as HeroType } from '@/payload-types'
 import { CMSLink } from '../Link'
-import { getPayloadHMR } from '@payloadcms/next/utilities'
 
 type Props = NonNullable<HeroType['highImpact']>
 
 export async function Hero({ title, description, image, links }: Props) {
-  const payload = await getPayloadHMR({
-    config: payloadConfig,
-  })
-  const { phone } = await payload.findGlobal({
-    slug: 'company-info',
-  })
-  const cleanedPhone = phone.replace(/\D/g, '')
-
   return (
     <section className="grid lg:gap-8 lg:grid-cols-12 2xl:px-0 2xl:container pb-16">
       <div className="mr-auto place-self-center lg:col-span-6">
@@ -27,18 +13,6 @@ export async function Hero({ title, description, image, links }: Props) {
         </h1>
         <p className="max-w-xl mb-4 lg:mb-8 text-muted-foreground text-lg">{description}</p>
         <div className="flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-4 xl:space-x-0">
-          {/* Mobile Links */}
-          <Link
-            href={`tel:${cleanedPhone}`}
-            className={cn(
-              buttonVariants({ variant: 'brand', size: 'xl' }),
-              'xl:hidden min-w-full md:min-w-64',
-            )}
-          >
-            <Icons.phone className="mr-2" />
-            Call Now
-          </Link>
-          {/* Desktop Links */}
           {links != null &&
             links.map(({ link, id }, index) => (
               <CMSLink
