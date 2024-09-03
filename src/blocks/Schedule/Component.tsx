@@ -33,7 +33,7 @@ export function ScheduleBlock(props: ScheduleType) {
         </div>
         {image != null && typeof image === 'object' && (
           <Image
-            src={image.url ?? ''}
+            src={image.url ?? '/placeholder.svg'}
             alt={image.alt ?? ''}
             className="object-cover w-full rounded-lg"
             width={1080}

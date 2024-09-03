@@ -28,7 +28,7 @@ export async function Hero({ title, description, image, links }: Props) {
       <div className="hidden lg:mt-0 lg:col-span-6 lg:flex relative">
         {image != null && typeof image === 'object' && (
           <Image
-            src={image.url ?? ''}
+            src={image.url ?? '/placeholder.svg'}
             alt={image.alt ?? ''}
             className="object-cover w-full rounded-lg"
             width={1080}
