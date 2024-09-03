@@ -8,37 +8,18 @@ import { Icons } from '@/components/Icons'
 import { MainNav } from './MainNav'
 import { MobileNav } from './MobileNav'
 import { HeaderNav } from './Nav'
+import { Logo } from '@/components/Logo/Logo'
 
 export const HeaderClient = ({ header }: { header: Header }) => {
   const navItems = header?.navItems || []
   const { address, phone } = header
 
   return (
-    <header className="sticky top-0 z-40 flex w-full bg-background/50 backdrop-blur-sm">
+    <header className="sticky top-0 z-40 flex w-full bg-background/50 backdrop-blur-sm py-8">
       <div className="flex items-center w-full px-4 md:px-8 2xl:px-0 2xl:container">
-        <Link href="/" className={cn(buttonVariants({ variant: 'ghost' }), 'py-8 px-0')}>
-          <Icons.logo className="w-40 md:w-44 lg:w-64" />
-        </Link>
+        <Logo />
         <MainNav navItems={navItems} />
         <MobileNav navItems={navItems} />
-        <div className="flex flex-col items-center xl:flex-row 2xl:space-x-2">
-          <div
-            className={cn(
-              buttonVariants({ variant: 'text' }),
-              'text-lg text-brand hidden xl:inline-flex',
-            )}
-          >
-            <Icons.phone className="mr-2" size={20} />
-            {phone}
-          </div>
-          <Link
-            href="https://goo.gl/maps/X956fmf511Fef9Pr7"
-            className={cn(buttonVariants({ variant: 'outline' }), 'hidden xl:inline-flex')}
-          >
-            <Icons.navigation className="mr-2" size={20} />
-            {address}
-          </Link>
-        </div>
       </div>
     </header>
   )

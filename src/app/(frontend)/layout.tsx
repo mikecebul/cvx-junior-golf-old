@@ -25,7 +25,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
         <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
       </head>
       <body className="min-h-dvh flex flex-col">
-        <ThemeProvider>
+        <ThemeProvider forcedTheme="light">
           <AdminBar
             adminBarProps={{
               preview: isEnabled,

@@ -1,12 +1,14 @@
+import { LandPlot } from 'lucide-react'
+import Link from 'next/link'
 import React from 'react'
 
 export const Logo = () => {
   return (
-    /* eslint-disable @next/next/no-img-element */
-    <img
-      alt="Payload Logo"
-      className="max-w-[9.375rem] invert dark:invert-0"
-      src="https://raw.githubusercontent.com/payloadcms/payload/main/packages/payload/src/admin/assets/images/payload-logo-light.svg"
-    />
+    <div className="flex items-center">
+      <Link href="/" className="flex items-center">
+        <LandPlot className="h-8 w-8 text-primary" />
+        <span className="ml-2 text-xl font-bold text-primary">Charlevoix Junior Golf</span>
+      </Link>
+    </div>
   )
 }

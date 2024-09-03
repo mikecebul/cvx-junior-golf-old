@@ -11,7 +11,7 @@ export function MainNav({ navItems }: { navItems: NavItem[] }) {
 
   return (
     <div className="flex-1">
-      <div className=" justify-center hidden px-8 gap-8 md:flex">
+      <div className=" justify-center hidden px-8 gap-8 md:flex flex-wrap">
         {navItems.map(({ link }, i) => {
           const slug =
             typeof link.reference?.value === 'object' &&
@@ -24,7 +24,7 @@ export function MainNav({ navItems }: { navItems: NavItem[] }) {
               {...link}
               appearance="text"
               className={cn('text-lg', {
-                'border-b-2 border-b-brand border-opacity-100 rounded-b-none text-brand':
+                'border-b-2 border-b-brand border-opacity-100 rounded-b-none text-brand-foreground':
                   isActiveRoute(currentPathName as string, slug),
               })}
             />

@@ -53,17 +53,14 @@ export async function Hero({ title, description, image, links }: Props) {
       </div>
       <div className="hidden lg:mt-0 lg:col-span-6 lg:flex relative">
         {image != null && typeof image === 'object' && (
-          <>
-            <Image
-              src={image.url ?? 'Woman_Laptop.webp'}
-              alt={image.alt ?? 'Woman using telehealth services from home.'}
-              className="object-cover w-full rounded-md"
-              width={1080}
-              height={1980}
-              priority
-            />
-            <SVG />
-          </>
+          <Image
+            src={image.url ?? ''}
+            alt={image.alt ?? ''}
+            className="object-cover w-full rounded-lg"
+            width={1080}
+            height={1980}
+            priority
+          />
         )}
       </div>
     </section>
