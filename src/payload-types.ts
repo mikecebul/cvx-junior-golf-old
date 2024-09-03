@@ -64,7 +64,7 @@ export interface UserAuthOperations {
 export interface Page {
   id: string;
   title: string;
-  layout: (CallToActionBlock | ContentBlock | MediaBlock | ArchiveBlock | FormBlock | Hero)[];
+  layout: (Hero | Schedule | CallToActionBlock | ContentBlock | MediaBlock | ArchiveBlock | FormBlock)[];
   meta?: {
     title?: string | null;
     image?: (string | null) | Media;
@@ -76,6 +76,90 @@ export interface Page {
   updatedAt: string;
   createdAt: string;
   _status?: ('draft' | 'published') | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "Hero".
+ */
+export interface Hero {
+  type: 'highImpact' | 'mediumImpact';
+  highImpact?: {
+    title: string;
+    description: string;
+    links?:
+      | {
+          link: {
+            type?: ('reference' | 'custom') | null;
+            newTab?: boolean | null;
+            reference?: {
+              relationTo: 'pages';
+              value: string | Page;
+            } | null;
+            url?: string | null;
+            label: string;
+            appearance?: ('default' | 'outline') | null;
+          };
+          id?: string | null;
+        }[]
+      | null;
+    image: string | Landscape;
+  };
+  mediumImpact?: {
+    subtitle: string;
+    title: string;
+    description: string;
+  };
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'hero';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "landscapes".
+ */
+export interface Landscape {
+  id: string;
+  alt: string;
+  updatedAt: string;
+  createdAt: string;
+  url?: string | null;
+  thumbnailURL?: string | null;
+  filename?: string | null;
+  mimeType?: string | null;
+  filesize?: number | null;
+  width?: number | null;
+  height?: number | null;
+  focalX?: number | null;
+  focalY?: number | null;
+  sizes?: {
+    thumbnail?: {
+      url?: string | null;
+      width?: number | null;
+      height?: number | null;
+      mimeType?: string | null;
+      filesize?: number | null;
+      filename?: string | null;
+    };
+  };
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "Schedule".
+ */
+export interface Schedule {
+  hero?: Hero[] | null;
+  events?:
+    | {
+        title: string;
+        date: string;
+        description?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  image: string | Landscape;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'schedule';
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -507,71 +591,6 @@ export interface Form {
     | null;
   updatedAt: string;
   createdAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "Hero".
- */
-export interface Hero {
-  type: 'highImpact' | 'mediumImpact';
-  highImpact?: {
-    title: string;
-    description: string;
-    links?:
-      | {
-          link: {
-            type?: ('reference' | 'custom') | null;
-            newTab?: boolean | null;
-            reference?: {
-              relationTo: 'pages';
-              value: string | Page;
-            } | null;
-            url?: string | null;
-            label: string;
-            appearance?: ('default' | 'outline') | null;
-          };
-          id?: string | null;
-        }[]
-      | null;
-    image: string | Landscape;
-  };
-  mediumImpact?: {
-    subtitle: string;
-    title: string;
-    description: string;
-  };
-  id?: string | null;
-  blockName?: string | null;
-  blockType: 'hero';
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "landscapes".
- */
-export interface Landscape {
-  id: string;
-  alt: string;
-  updatedAt: string;
-  createdAt: string;
-  url?: string | null;
-  thumbnailURL?: string | null;
-  filename?: string | null;
-  mimeType?: string | null;
-  filesize?: number | null;
-  width?: number | null;
-  height?: number | null;
-  focalX?: number | null;
-  focalY?: number | null;
-  sizes?: {
-    thumbnail?: {
-      url?: string | null;
-      width?: number | null;
-      height?: number | null;
-      mimeType?: string | null;
-      filesize?: number | null;
-      filename?: string | null;
-    };
-  };
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

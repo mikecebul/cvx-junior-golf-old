@@ -38,7 +38,7 @@ importers:
         version: 3.0.0-beta.97(monaco-editor@0.38.0)(next@15.0.0-canary.104(react-dom@19.0.0-rc-06d0b89e-20240801(react@19.0.0-rc-06d0b89e-20240801))(react@19.0.0-rc-06d0b89e-20240801)(sass@1.77.4))(payload@3.0.0-beta.97(graphql@16.9.0)(monaco-editor@0.38.0)(react-dom@19.0.0-rc-06d0b89e-20240801(react@19.0.0-rc-06d0b89e-20240801))(react@19.0.0-rc-06d0b89e-20240801)(typescript@5.5.4))(react-dom@19.0.0-rc-06d0b89e-20240801(react@19.0.0-rc-06d0b89e-20240801))(react@19.0.0-rc-06d0b89e-20240801)(types-react@19.0.0-rc.0)(typescript@5.5.4)
       '@payloadcms/richtext-lexical':
         specifier: beta
-        version: 3.0.0-beta.97(w6bkjpmqbdg3mgudwkishv2sde)
+        version: 3.0.0-beta.97(@faceless-ui/modal@3.0.0-beta.2(react-dom@19.0.0-rc-06d0b89e-20240801(react@19.0.0-rc-06d0b89e-20240801))(react@19.0.0-rc-06d0b89e-20240801))(@faceless-ui/scroll-info@2.0.0-beta.0(react-dom@19.0.0-rc-06d0b89e-20240801(react@19.0.0-rc-06d0b89e-20240801))(react@19.0.0-rc-06d0b89e-20240801))(@lexical/headless@0.17.0)(@lexical/link@0.17.0)(@lexical/list@0.17.0)(@lexical/mark@0.17.0)(@lexical/markdown@0.17.0)(@lexical/react@0.17.0(react-dom@19.0.0-rc-06d0b89e-20240801(react@19.0.0-rc-06d0b89e-20240801))(react@19.0.0-rc-06d0b89e-20240801)(yjs@13.6.18))(@lexical/rich-text@0.17.0)(@lexical/selection@0.17.0)(@lexical/table@0.17.0)(@lexical/utils@0.17.0)(@payloadcms/next@3.0.0-beta.97(graphql@16.9.0)(monaco-editor@0.38.0)(next@15.0.0-canary.104(react-dom@19.0.0-rc-06d0b89e-20240801(react@19.0.0-rc-06d0b89e-20240801))(react@19.0.0-rc-06d0b89e-20240801)(sass@1.77.4))(payload@3.0.0-beta.97(graphql@16.9.0)(monaco-editor@0.38.0)(react-dom@19.0.0-rc-06d0b89e-20240801(react@19.0.0-rc-06d0b89e-20240801))(react@19.0.0-rc-06d0b89e-20240801)(typescript@5.5.4))(react-dom@19.0.0-rc-06d0b89e-20240801(react@19.0.0-rc-06d0b89e-20240801))(react@19.0.0-rc-06d0b89e-20240801)(types-react@19.0.0-rc.0)(typescript@5.5.4))(lexical@0.17.0)(monaco-editor@0.38.0)(next@15.0.0-canary.104(react-dom@19.0.0-rc-06d0b89e-20240801(react@19.0.0-rc-06d0b89e-20240801))(react@19.0.0-rc-06d0b89e-20240801)(sass@1.77.4))(payload@3.0.0-beta.97(graphql@16.9.0)(monaco-editor@0.38.0)(react-dom@19.0.0-rc-06d0b89e-20240801(react@19.0.0-rc-06d0b89e-20240801))(react@19.0.0-rc-06d0b89e-20240801)(typescript@5.5.4))(react-dom@19.0.0-rc-06d0b89e-20240801(react@19.0.0-rc-06d0b89e-20240801))(react@19.0.0-rc-06d0b89e-20240801)(types-react@19.0.0-rc.0)(typescript@5.5.4)
       '@payloadcms/storage-s3':
         specifier: beta
         version: 3.0.0-beta.97(payload@3.0.0-beta.97(graphql@16.9.0)(monaco-editor@0.38.0)(react-dom@19.0.0-rc-06d0b89e-20240801(react@19.0.0-rc-06d0b89e-20240801))(react@19.0.0-rc-06d0b89e-20240801)(typescript@5.5.4))
@@ -75,6 +75,9 @@ importers:
       cross-env:
         specifier: ^7.0.3
         version: 7.0.3
+      date-fns:
+        specifier: ^3.6.0
+        version: 3.6.0
       geist:
         specifier: ^1.3.0
         version: 1.3.1(next@15.0.0-canary.104(react-dom@19.0.0-rc-06d0b89e-20240801(react@19.0.0-rc-06d0b89e-20240801))(react@19.0.0-rc-06d0b89e-20240801)(sass@1.77.4))
@@ -2301,6 +2304,9 @@ packages:
 
   date-fns@3.3.1:
     resolution: {integrity: sha512-y8e109LYGgoQDveiEBD3DYXKba1jWf5BA8YU1FL5Tvm0BTdEfy54WLCwnuYWZNnzzvALy/QQ4Hov+Q9RVRv+Zw==}
+
+  date-fns@3.6.0:
+    resolution: {integrity: sha512-fRHTG8g/Gif+kSh50gaGEdToemgfj74aRX3swtiouboip5JDLAyDE9F11nHMIcvOaXeOC6D7SpNhi7uFyB7Uww==}
 
   dateformat@4.6.3:
     resolution: {integrity: sha512-2P0p0pFGzHS5EMnhdxQi7aJN+iMheud0UhG4dlE1DLAlvL8JHjJJTX/CSm4JXwV0Ka5nGk3zC5mcb5bUQUxxMA==}
@@ -5945,7 +5951,7 @@ snapshots:
       eslint: 8.48.0
       eslint-config-prettier: 9.0.0(eslint@8.48.0)
       eslint-plugin-import: 2.28.1(@typescript-eslint/parser@6.6.0(eslint@8.48.0)(typescript@5.5.4))(eslint@8.48.0)
-      eslint-plugin-jest: 27.2.3(@typescript-eslint/eslint-plugin@6.6.0(@typescript-eslint/parser@7.18.0(eslint@8.57.0)(typescript@5.5.4))(eslint@8.57.0)(typescript@5.5.4))(eslint@8.48.0)(typescript@5.5.4)
+      eslint-plugin-jest: 27.2.3(@typescript-eslint/eslint-plugin@6.6.0(@typescript-eslint/parser@7.18.0(eslint@8.57.0)(typescript@5.5.4))(eslint@8.57.0)(typescript@5.5.4))(eslint@8.57.0)(typescript@5.5.4)
       eslint-plugin-jest-dom: 5.1.0(eslint@8.48.0)
       eslint-plugin-jsx-a11y: 6.7.1(eslint@8.48.0)
       eslint-plugin-node: 11.1.0(eslint@8.48.0)
@@ -6078,8 +6084,8 @@ snapshots:
       - supports-color
       - typescript
 
-  '@payloadcms/richtext-lexical@3.0.0-beta.97(w6bkjpmqbdg3mgudwkishv2sde)':
-    dependencies:
+  ? '@payloadcms/richtext-lexical@3.0.0-beta.97(@faceless-ui/modal@3.0.0-beta.2(react-dom@19.0.0-rc-06d0b89e-20240801(react@19.0.0-rc-06d0b89e-20240801))(react@19.0.0-rc-06d0b89e-20240801))(@faceless-ui/scroll-info@2.0.0-beta.0(react-dom@19.0.0-rc-06d0b89e-20240801(react@19.0.0-rc-06d0b89e-20240801))(react@19.0.0-rc-06d0b89e-20240801))(@lexical/headless@0.17.0)(@lexical/link@0.17.0)(@lexical/list@0.17.0)(@lexical/mark@0.17.0)(@lexical/markdown@0.17.0)(@lexical/react@0.17.0(react-dom@19.0.0-rc-06d0b89e-20240801(react@19.0.0-rc-06d0b89e-20240801))(react@19.0.0-rc-06d0b89e-20240801)(yjs@13.6.18))(@lexical/rich-text@0.17.0)(@lexical/selection@0.17.0)(@lexical/table@0.17.0)(@lexical/utils@0.17.0)(@payloadcms/next@3.0.0-beta.97(graphql@16.9.0)(monaco-editor@0.38.0)(next@15.0.0-canary.104(react-dom@19.0.0-rc-06d0b89e-20240801(react@19.0.0-rc-06d0b89e-20240801))(react@19.0.0-rc-06d0b89e-20240801)(sass@1.77.4))(payload@3.0.0-beta.97(graphql@16.9.0)(monaco-editor@0.38.0)(react-dom@19.0.0-rc-06d0b89e-20240801(react@19.0.0-rc-06d0b89e-20240801))(react@19.0.0-rc-06d0b89e-20240801)(typescript@5.5.4))(react-dom@19.0.0-rc-06d0b89e-20240801(react@19.0.0-rc-06d0b89e-20240801))(react@19.0.0-rc-06d0b89e-20240801)(types-react@19.0.0-rc.0)(typescript@5.5.4))(lexical@0.17.0)(monaco-editor@0.38.0)(next@15.0.0-canary.104(react-dom@19.0.0-rc-06d0b89e-20240801(react@19.0.0-rc-06d0b89e-20240801))(react@19.0.0-rc-06d0b89e-20240801)(sass@1.77.4))(payload@3.0.0-beta.97(graphql@16.9.0)(monaco-editor@0.38.0)(react-dom@19.0.0-rc-06d0b89e-20240801(react@19.0.0-rc-06d0b89e-20240801))(react@19.0.0-rc-06d0b89e-20240801)(typescript@5.5.4))(react-dom@19.0.0-rc-06d0b89e-20240801(react@19.0.0-rc-06d0b89e-20240801))(react@19.0.0-rc-06d0b89e-20240801)(types-react@19.0.0-rc.0)(typescript@5.5.4)'
+  : dependencies:
       '@faceless-ui/modal': 3.0.0-beta.2(react-dom@19.0.0-rc-06d0b89e-20240801(react@19.0.0-rc-06d0b89e-20240801))(react@19.0.0-rc-06d0b89e-20240801)
       '@faceless-ui/scroll-info': 2.0.0-beta.0(react-dom@19.0.0-rc-06d0b89e-20240801(react@19.0.0-rc-06d0b89e-20240801))(react@19.0.0-rc-06d0b89e-20240801)
       '@lexical/headless': 0.17.0
@@ -7582,6 +7588,8 @@ snapshots:
 
   date-fns@3.3.1: {}
 
+  date-fns@3.6.0: {}
+
   dateformat@4.6.3: {}
 
   debug@3.2.7:
@@ -7994,10 +8002,10 @@ snapshots:
       eslint: 8.48.0
       requireindex: 1.2.0
 
-  eslint-plugin-jest@27.2.3(@typescript-eslint/eslint-plugin@6.6.0(@typescript-eslint/parser@7.18.0(eslint@8.57.0)(typescript@5.5.4))(eslint@8.57.0)(typescript@5.5.4))(eslint@8.48.0)(typescript@5.5.4):
+  eslint-plugin-jest@27.2.3(@typescript-eslint/eslint-plugin@6.6.0(@typescript-eslint/parser@7.18.0(eslint@8.57.0)(typescript@5.5.4))(eslint@8.57.0)(typescript@5.5.4))(eslint@8.57.0)(typescript@5.5.4):
     dependencies:
       '@typescript-eslint/utils': 5.62.0(eslint@8.48.0)(typescript@5.5.4)
-      eslint: 8.48.0
+      eslint: 8.57.0
     optionalDependencies:
       '@typescript-eslint/eslint-plugin': 6.6.0(@typescript-eslint/parser@6.6.0(eslint@8.48.0)(typescript@5.5.4))(eslint@8.48.0)(typescript@5.5.4)
     transitivePeerDependencies:
@@ -8068,7 +8076,7 @@ snapshots:
     dependencies:
       eslint: 8.48.0
     optionalDependencies:
-      eslint-plugin-jest: 27.2.3(@typescript-eslint/eslint-plugin@6.6.0(@typescript-eslint/parser@7.18.0(eslint@8.57.0)(typescript@5.5.4))(eslint@8.57.0)(typescript@5.5.4))(eslint@8.48.0)(typescript@5.5.4)
+      eslint-plugin-jest: 27.2.3(@typescript-eslint/eslint-plugin@6.6.0(@typescript-eslint/parser@7.18.0(eslint@8.57.0)(typescript@5.5.4))(eslint@8.57.0)(typescript@5.5.4))(eslint@8.57.0)(typescript@5.5.4)
 
   eslint-plugin-react-hooks@4.6.0(eslint@8.48.0):
     dependencies:
@@ -9433,7 +9441,7 @@ snapshots:
     dependencies:
       '@floating-ui/react': 0.26.22(react-dom@19.0.0-rc-06d0b89e-20240801(react@19.0.0-rc-06d0b89e-20240801))(react@19.0.0-rc-06d0b89e-20240801)
       clsx: 2.1.1
-      date-fns: 3.3.1
+      date-fns: 3.6.0
       prop-types: 15.8.1
       react: 19.0.0-rc-06d0b89e-20240801
       react-dom: 19.0.0-rc-06d0b89e-20240801(react@19.0.0-rc-06d0b89e-20240801)
