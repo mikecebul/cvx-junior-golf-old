@@ -9,6 +9,7 @@ import { FormBlock } from '@/blocks/Form/Component'
 import { MediaBlock } from '@/blocks/MediaBlock/Component'
 import { HeroBlock } from '@/blocks/Hero/Component'
 import { ScheduleBlock } from '@/blocks/Schedule/Component'
+import { BannerBlock } from './Banner/Component'
 
 const blockComponents = {
   content: ContentBlock,
@@ -17,6 +18,7 @@ const blockComponents = {
   hero: HeroBlock,
   mediaBlock: MediaBlock,
   schedule: ScheduleBlock,
+  banner: BannerBlock,
 }
 
 export const RenderBlocks: React.FC<{
@@ -38,6 +40,7 @@ export const RenderBlocks: React.FC<{
             if (Block) {
               return (
                 <div className="my-16" key={index}>
+                  {/* @ts-expect-error */}
                   <Block {...block} />
                 </div>
               )
